@@ -2,7 +2,7 @@
 
 ## linking to docs/README.md (has 'permalink: /'):
 
-- [docs/README.md](docs/README.md) - nope
+- [docs/README.md](docs/README.md) - nope (this redirects to `https://zvold.github.io/test-gh-pages/` so stays on the same page)
 - [docs/](docs/) - nope
 - [docs/README.html](docs/README.html) - nope
 
@@ -14,9 +14,9 @@
 
 ## linking to docs/page2.md ('permalink: /lol'):
 
-- [lol/](lol/)
-- [lol](lol)
-- [docs/page2.md](docs/page2.md)
+- [lol/](lol/) - nope
+- [lol](lol) - yep (with `zvold.github.io/test-gh-pages/lol` URL)
+- [docs/page2.md](docs/page2.md) - yep (URL as above)
 - [docs/lol](docs/lol)
 
 Running this from any location should work:
