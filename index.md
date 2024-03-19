@@ -1,8 +1,23 @@
 # Test gh-pages project
 
-Checking if linking [works](docs/README.md) - not really (because of '/' front matter?), what about [this](docs/) or [this](docs/README.html) ?
+## linking to docs/README.md (has 'permalink: /'):
 
-Checking if linking [works N2](docs/page1.md), or maybe [like this](docs/page1.html) or like [this](docs/page1) ?
+- [docs/README.md](docs/README.md) - nope
+- [docs/](docs/) - nope
+- [docs/README.html](docs/README.html) - nope
+
+## linking to docs/page1.md (no front matter):
+
+- [docs/page1.md](docs/page1.md) - yep
+- [docs/page1.html](docs/page1.html) - yep
+- [docs/page1](docs/page1) - yep
+
+## linking to docs/page2.md ('permalink: /lol'):
+
+- [lol/](lol/)
+- [lol](lol)
+- [docs/page2.md](docs/page2.md)
+- [docs/lol](docs/lol)
 
 Running this from any location should work:
 
@@ -10,4 +25,4 @@ Running this from any location should work:
 go run github.com/zvold/test-gh-pages/01-hello-world@latest 
 ```
 
-
+ 
