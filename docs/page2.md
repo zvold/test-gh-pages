@@ -22,3 +22,5 @@ a.k.a. "page 2"
 
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
+
+{% include alerts/primary.html content="A primary alert" %}

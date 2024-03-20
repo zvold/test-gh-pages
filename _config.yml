@@ -2,5 +2,6 @@ theme: jekyll-theme-primer
 
 plugins:
   - jekyll-sitemap
+  - jekyll-octicons
 
 markdown: GFM
