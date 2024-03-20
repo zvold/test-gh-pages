@@ -1,3 +1,7 @@
+title: title override
+url: "https://zvold.github.io/test-gh-pages"
+baseurl: ""
+
 theme: jekyll-theme-primer
 
 plugins:
