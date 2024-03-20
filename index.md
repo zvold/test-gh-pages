@@ -3,9 +3,9 @@ permalink: /
 ---
 # Test gh-pages project
 
-## linking to docs/README.md (has 'permalink: /'):
+## linking to docs/README.md ('permalink: /readme'):
 
-- [docs/README.md](docs/README.md) - nope (this redirects to `https://zvold.github.io/test-gh-pages/` so stays on the same page)
+- [docs/README.md](docs/README.md) - yep (URL `https://zvold.github.io/test-gh-pages/readme`)
 - [docs/](docs/) - nope
 - [docs/README.html](docs/README.html) - nope
 

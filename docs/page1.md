@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 # Page 1
 
 No "front matter"

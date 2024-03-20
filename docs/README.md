@@ -1,5 +1,6 @@
 ---
 permalink: /readme
+layout: custom
 ---
 # dcs/README.md
 
