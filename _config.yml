@@ -1,6 +1,6 @@
 title: title override
-url: "https://zvold.github.io/test-gh-pages"
-baseurl: ""
+url: "https://zvold.github.io"
+baseurl: "/test-gh-pages"
 
 theme: jekyll-theme-primer
 
