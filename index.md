@@ -29,6 +29,8 @@ go run github.com/zvold/test-gh-pages/01-hello-world@latest
 
 {% octicon info height:24 %}
 
+{% octicon package height:24 %}
+
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
 
