@@ -1,3 +1,6 @@
+---
+permalink: /
+---
 # Test gh-pages project
 
 ## linking to docs/README.md (has 'permalink: /'):
