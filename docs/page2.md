@@ -1,5 +1,6 @@
 ---
 permalink: /lol
+layout: default
 ---
 
 # LOL page
