@@ -21,6 +21,7 @@ a.k.a. "page 2"
 > Urgent info that needs immediate user attention to avoid problems.
 
 > [!CAUTION]
+> {% octicon infinity height:24 %}
 > Advises about risks or negative outcomes of certain actions.
 
 {% include alerts/primary.html content="A primary alert" %}
