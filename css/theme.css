@@ -1,3 +1,9 @@
+:root {
+    --light-border-color: #dee2e6;
+    --code-color: #008080;
+    --main-color: #008cba;
+}
+
 .callout {
     padding: 0.75rem 1rem 0.75rem 1rem;
     margin-top: 1.25rem;
@@ -11,13 +17,20 @@
     border-left-color: var(--main-color);
 }
 
+.callout-secondary {
+    border-left-color: #185977;
+}
+
 .alert {
-    color: #084298;
-    background-color: #cfe2ff;
-    border-color: #b6d4fe;
     position: relative;
     padding: 1rem 1rem;
     margin-bottom: 1rem;
     border: 1px solid;
     border-radius: 0.25rem;
+}
+
+.alert-primary {
+    color: #084298;
+    background-color: #cfe2ff;
+    border-color: #b6d4fe;
 }

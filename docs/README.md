@@ -1,5 +1,5 @@
 ---
-permalink: /
+permalink: /readme
 ---
 # dcs/README.md
 
