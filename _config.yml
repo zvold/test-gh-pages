@@ -1,8 +1,6 @@
-theme: jekyll-theme-architect
+theme: jekyll-theme-primer
 
 plugins:
   - jekyll-sitemap
-
-style: dark
 
 markdown: GFM
