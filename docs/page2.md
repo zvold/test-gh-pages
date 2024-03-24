@@ -11,6 +11,12 @@ a.k.a. "page 2"
 
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
+> ```go
+> n.storage.ApplySnapshot(rd.Snapshot)
+> n.storage.SetHardState(rd.HardState)
+> n.storage.Append(rd.Entries)
+> ```
+> ^ code inside quotation
 
 > [!TIP]
 > Helpful advice for doing things better or more easily.
