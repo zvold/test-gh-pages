@@ -1,13 +1,18 @@
----
-permalink: /
----
-# Test gh-pages project
+# Test gh-pages project (deploying from /docs)
 
-## linking to docs/README.md ('permalink: /readme'):
+## docs/index.md ('permalink: /'):
 
-- [docs/README.md](docs/README.md) - yep (URL `https://zvold.github.io/test-gh-pages/readme`)
+- [docs/index.md](docs/index.md)
+- [docs/index.html](docs/index.html)
+- [https://zvold.github.io/test-gh-pages/](https://zvold.github.io/test-gh-pages/)
+- [https://zvold.github.io/test-gh-pages](https://zvold.github.io/test-gh-pages)
+
+## linking to docs/index.md ('permalink: /'):
+
+- [docs/index.md](docs/index.md) - yep (URL `https://zvold.github.io/test-gh-pages/` ?)
 - [docs/](docs/) - nope
-- [docs/README.html](docs/README.html) - nope
+- [/](/)
+- [docs/index.html](docs/index.html) - nope
 
 ## linking to docs/page1.md (no front matter):
 
@@ -19,6 +24,8 @@ permalink: /
 
 - [lol/](lol/) - nope
 - [lol](lol) - yep (with `zvold.github.io/test-gh-pages/lol` URL)
+- [/lol/](/lol/)
+- [/lol](lol)
 - [docs/page2.md](docs/page2.md) - yep (URL as above)
 - [docs/lol](docs/lol)
 
