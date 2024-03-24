@@ -13,6 +13,11 @@ A primary callout.
 
 <div class="callout callout-secondary" markdown="span">
 A secondary callout.
+```go
+n.storage.ApplySnapshot(rd.Snapshot)
+n.storage.SetHardState(rd.HardState)
+n.storage.Append(rd.Entries)
+```
 </div>
 
 ## render some Go code

@@ -43,6 +43,11 @@ go run github.com/zvold/test-gh-pages/01-hello-world@latest
 
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
+> ```go
+> n.storage.ApplySnapshot(rd.Snapshot)
+> n.storage.SetHardState(rd.HardState)
+> n.storage.Append(rd.Entries)
+> ```
 
 > [!TIP]
 > Helpful advice for doing things better or more easily.
