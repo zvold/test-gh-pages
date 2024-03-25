@@ -24,11 +24,11 @@ a.k.a. "page 2"
 > [!IMPORTANT]
 > Key information users need to know to achieve their goal.
 
-> [!WARNING]
+> {% octicon alert height:24 %} Note:
 > Urgent info that needs immediate user attention to avoid problems.
 
-> [!CAUTION]
-> {% octicon infinity height:24 %}
+> {% octicon infinity height:24 %} Note:
+>
 > Advises about risks or negative outcomes of certain actions.
 
 {% include alerts/primary.html content="A primary alert" %}
