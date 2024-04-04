@@ -41,3 +41,26 @@ n.storage.SetHardState(rd.HardState)
 n.storage.Append(rd.Entries)
 ```
 " %}
+
+## List test
+
+- item1
+  text about item1
+- item2
+  text about item2
+
+## Another list test
+
+- item1
+
+  text about item1
+- item2
+
+  text about item2
+
+## Another list test
+
+- item1 \
+  text about item1
+- item2 \
+  text about item2
