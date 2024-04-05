@@ -36,3 +36,6 @@ Links to sibling pages:
 - [page2](page2) - nope because it's /lol (https://zvold.github.io/test-gh-pages/page2)
 - [page2/](page2/)
 
+## inline code
+
+Here's `some` code `for` a test.

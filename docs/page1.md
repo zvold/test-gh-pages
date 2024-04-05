@@ -22,6 +22,8 @@ n.storage.Append(rd.Entries)
 
 ## render some Go code
 
+Some inline `code` and `identifiers`.
+
 ```go
 package main
 

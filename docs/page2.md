@@ -9,6 +9,8 @@ a.k.a. "page 2"
 
 ## alerts test
 
+Some `code` here `as well`.
+
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
 > ```go
