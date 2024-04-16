@@ -65,4 +65,4 @@ go run github.com/zvold/test-gh-pages/01-hello-world@latest
 
 The documentation in the [`docs/`](docs) folder is licensed under a [CC-BY license](LICENSE).
 
-All code in this repository is licensed under the [MIT license](LICENSE-CODE).
+All code in this repository is licensed under the [MIT license](LICENSE.mit).
