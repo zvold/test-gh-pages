@@ -45,6 +45,16 @@
       }
     </style>
     <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      var target = 75;
+      if (urlParams.get('t') != null) {
+        const parsedInt = parseInt(urlParams.get('t'))
+        if (!isNaN(parsedInt) && parsedInt > 0 && parsedInt <=100) {
+          target = parsedInt
+        }
+      }
+      console.log("target work %: ", target)
+
       var mode = "off";
       var workSeconds = 1;
       var restSeconds = 1;
@@ -57,6 +67,7 @@
           .replaceAll("%REST_WIDTH%", 400.0 * (1.0 - ratio))
           .replaceAll("%WORK_TIME%", formatTime(workSeconds))
           .replaceAll("%REST_TIME%", formatTime(restSeconds))
+          .replaceAll("%TARGET_X%", 400.0 * target / 100.0)
           .replaceAll("%" + mode + "%", "pressed")
           .replace(/%(work|rest|off)%/g, "");
 
@@ -157,7 +168,7 @@
             <rect x="0" y="10" width="%SPLIT_POSITION%" height="20" fill="red"/>
             <rect x="%SPLIT_POSITION%" y="10" width="%REST_WIDTH%" height="20" fill="green"/>
             <rect x="1" y="10" width="400" height="20" fill="transparent"/>
-            <polygon points="310, 1, 310, 41" stroke="blue" stroke-dasharray="1, 5"/>
+            <polygon points="%TARGET_X%, 1, %TARGET_X%, 41" stroke="blue" stroke-dasharray="1, 5"/>
           </svg>
           <div class="content-div" style="grid-row: 2; display: flex; justify-content: space-between;">
             <span style="text-align: left;">work→ %WORK_TIME%</span>
