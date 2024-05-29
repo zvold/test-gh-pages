@@ -46,8 +46,8 @@
     </style>
     <script>
       var mode = "off";
-      var workSeconds = 0;
-      var restSeconds = 0;
+      var workSeconds = 1;
+      var restSeconds = 1;
       var timer = null;
 
       function createDivFromTemplate(ratio) {
@@ -55,6 +55,8 @@
         var divString = template
           .replaceAll("%SPLIT_POSITION%", 400.0 * ratio)
           .replaceAll("%REST_WIDTH%", 400.0 * (1.0 - ratio))
+          .replaceAll("%WORK_TIME%", formatTime(workSeconds))
+          .replaceAll("%REST_TIME%", formatTime(restSeconds))
           .replaceAll("%" + mode + "%", "pressed")
           .replace(/%(work|rest|off)%/g, "");
 
@@ -64,6 +66,9 @@
       }
 
       function toggleButton(newMode) {
+        if (mode == newMode) {
+          return;
+        }
         switch(newMode) {
           case "work":
             setPressed("work", true);
@@ -131,59 +136,53 @@
         parent.replaceChild(progressDiv, oldChild);
       }
 
+      function formatTime(seconds) {
+        if (seconds < 60) {
+          return `${seconds}s`;
+        } else if (seconds < 3600) {
+          const minutes = Math.floor(seconds / 60);
+          const remainingSeconds = seconds % 60;
+          return `${minutes}m${remainingSeconds.toString().padStart(2, "0")}s`;
+        } else {
+          const hours = Math.floor(seconds / 3600);
+          const remainingMinutes = Math.floor((seconds % 3600) / 60);
+          return `${hours}h${remainingMinutes.toString().padStart(2, "0")}m`;
+        }
+      }
 
+      // <text x="5" y="21" text-anchor="start" stroke-width="1" dominant-baseline="middle" font-family="serif" font-weight="10">work→ 1h23m</text>
       const template = `
-      <div class="grid-container">
-        <svg width="401" height="40" stroke-width="2" stroke="black">
-          <rect x="0" y="10" width="%SPLIT_POSITION%" height="20" fill="red"/>
-          <rect x="%SPLIT_POSITION%" y="10" width="%REST_WIDTH%" height="20" fill="green"/>
-          <rect x="1" y="10" width="400" height="20" fill="transparent"/>
-          <polygon points="310, 0, 310, 40" stroke="blue" stroke-dasharray="1, 5"/>
-        </svg>
-        <div class="content-div" style="grid-row: 2; display: flex; justify-content: space-between;">
-          <span style="text-align: left;">work→ 1h20m</span>
-          <span style="text-align: right;">43m15s ←rest</span>
+        <div class="grid-container">
+          <svg width="401" height="40" stroke-width="2" stroke="black">
+            <rect x="0" y="10" width="%SPLIT_POSITION%" height="20" fill="red"/>
+            <rect x="%SPLIT_POSITION%" y="10" width="%REST_WIDTH%" height="20" fill="green"/>
+            <rect x="1" y="10" width="400" height="20" fill="transparent"/>
+            <polygon points="310, 1, 310, 41" stroke="blue" stroke-dasharray="1, 5"/>
+          </svg>
+          <div class="content-div" style="grid-row: 2; display: flex; justify-content: space-between;">
+            <span style="text-align: left;">work→ %WORK_TIME%</span>
+            <span style="text-align: right;">%REST_TIME% ←rest</span>
+          </div>
+          <div class="content-div button-container" style="grid-row: 3;">
+            <button id="button-work" class="button %work%" onclick="toggleButton('work')">
+              work
+            </button>
+            <button id="button-rest" class="button %rest%" onclick="toggleButton('rest')">
+              rest
+            </button>
+            <button id="button-off" class="button %off%" onclick="toggleButton('off')">
+              off the clock
+            </button>
+          </div>
         </div>
-        <div class="content-div button-container" style="grid-row: 3;">
-          <button id="button-work" class="button %work%" onclick="toggleButton('work')">
-            work
-          </button>
-          <button id="button-rest" class="button %rest%" onclick="toggleButton('rest')">
-            rest
-          </button>
-          <button id="button-off" class="button %off%" onclick="toggleButton('off')">
-            off the clock
-          </button>
-        </div>
-      </div>
-`
+        `
+
+      window.onload = updateProgressDiv;
     </script>
   </head>
   <body>
-    <div id="progress-div" style="position: absolute; left: 600px; top: 200px;">
-      <div class="grid-container">
-        <svg width="401" height="40" stroke-width="2" stroke="black">
-          <rect x="0" y="10" width="250" height="20" fill="red"/>
-          <rect x="250" y="10" width="150" height="20" fill="green"/>
-          <rect x="1" y="10" width="400" height="20" fill="transparent"/>
-          <polygon points="310, 0, 310, 40" stroke="blue" stroke-dasharray="1, 5"/>
-        </svg>
-        <div class="content-div" style="grid-row: 2; display: flex; justify-content: space-between;">
-          <span style="text-align: left;">work→ 1h20m</span>
-          <span style="text-align: right;">43m15s ←rest</span>
-        </div>
-        <div class="content-div button-container" style="grid-row: 3;">
-          <button id="button-work" class="button" onclick="toggleButton('work')">
-            work
-          </button>
-          <button id="button-rest" class="button"onclick="toggleButton('rest')">
-            rest
-          </button>
-          <button id="button-off" class="button pressed"onclick="toggleButton('off')">
-            off the clock
-          </button>
-        </div>
-      </div>
+    <div id="progress-div" style="position: absolute; left: 10px; top: 10px;">
+      <div></div>
     </div>
   </body>
 </html>
