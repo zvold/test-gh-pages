@@ -44,24 +44,144 @@
         background-color: #aaa;
       }
     </style>
-  </head>
-  <body>
-    <div style="position: absolute; left: 600px; top: 200px;">
+    <script>
+      var mode = "off";
+      var workSeconds = 0;
+      var restSeconds = 0;
+      var timer = null;
+
+      function createDivFromTemplate(ratio) {
+        var position = 400.0 * ratio;
+        var divString = template
+          .replaceAll("%SPLIT_POSITION%", 400.0 * ratio)
+          .replaceAll("%REST_WIDTH%", 400.0 * (1.0 - ratio))
+          .replaceAll("%" + mode + "%", "pressed")
+          .replace(/%(work|rest|off)%/g, "");
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(divString, "text/html");
+        return doc.body.firstChild;
+      }
+
+      function toggleButton(newMode) {
+        switch(newMode) {
+          case "work":
+            setPressed("work", true);
+            setPressed("rest", false);
+            setPressed("off", false);
+            if (timer == null) {
+              timer = setInterval(updateProgressDiv, 1000);
+            }
+            break;
+          case "rest":
+            setPressed("work", false);
+            setPressed("rest", true);
+            setPressed("off", false);
+            if (timer == null) {
+              timer = setInterval(updateProgressDiv, 1000);
+            }
+            break;
+          case "off":
+            setPressed("work", false);
+            setPressed("rest", false);
+            setPressed("off", true);
+            if (timer != null) {
+              clearInterval(timer);
+              timer = null;
+            }
+            break;
+        }
+        mode = newMode;
+        console.log("mode switched to: ", mode)
+      }
+
+      function setPressed(buttonId, isPressed) {
+        var button = document.getElementById("button-" + buttonId);
+        if (isPressed) {
+          button.setAttribute("class", "button pressed");
+        } else {
+          button.setAttribute("class", "button");
+        }
+      }
+
+      function updateProgressDiv() {
+        // TODO: don't rely on the repeat interval being measured precisely.
+
+        var ratio = 1.0;
+        switch (mode) {
+          case "work":
+            workSeconds++;
+            break;
+          case "rest":
+            restSeconds++;
+            break;
+          case "off":
+            console.log("no-op");
+            break;
+        }
+        if (restSeconds != 0) {
+          ratio = 1.0 * workSeconds / (workSeconds + restSeconds);
+        }
+
+        //console.log(workSeconds + ", " + restSeconds + ", " + ratio)
+
+        var progressDiv = createDivFromTemplate(ratio);
+        var parent = document.getElementById("progress-div")
+        var oldChild = parent.firstElementChild;
+        parent.replaceChild(progressDiv, oldChild);
+      }
+
+
+      const template = `
       <div class="grid-container">
-        <svg width="401" height="40">
-          <rect x="0" y="10" width="250" height="20" fill="red" stroke="black" stroke-width="2"/>
-          <rect x="250" y="10" width="150" height="20" fill="green" stroke="black" stroke-width="2"/>
-          <rect x="1" y="10" width="400" height="20" fill="transparent" stroke="black" stroke-width="2"/>
-          <polygon points="310, 0, 310, 40" stroke="blue" stroke-width="2" stroke-dasharray="1, 5"/>
+        <svg width="401" height="40" stroke-width="2" stroke="black">
+          <rect x="0" y="10" width="%SPLIT_POSITION%" height="20" fill="red"/>
+          <rect x="%SPLIT_POSITION%" y="10" width="%REST_WIDTH%" height="20" fill="green"/>
+          <rect x="1" y="10" width="400" height="20" fill="transparent"/>
+          <polygon points="310, 0, 310, 40" stroke="blue" stroke-dasharray="1, 5"/>
         </svg>
         <div class="content-div" style="grid-row: 2; display: flex; justify-content: space-between;">
           <span style="text-align: left;">work→ 1h20m</span>
           <span style="text-align: right;">43m15s ←rest</span>
-        </div>  
+        </div>
         <div class="content-div button-container" style="grid-row: 3;">
-          <button class="button pressed">work</button>
-          <button class="button">rest</button>
-          <button class="button">off the clock</button>
+          <button id="button-work" class="button %work%" onclick="toggleButton('work')">
+            work
+          </button>
+          <button id="button-rest" class="button %rest%" onclick="toggleButton('rest')">
+            rest
+          </button>
+          <button id="button-off" class="button %off%" onclick="toggleButton('off')">
+            off the clock
+          </button>
+        </div>
+      </div>
+`
+    </script>
+  </head>
+  <body>
+    <div id="progress-div" style="position: absolute; left: 600px; top: 200px;">
+      <div class="grid-container">
+        <svg width="401" height="40" stroke-width="2" stroke="black">
+          <rect x="0" y="10" width="250" height="20" fill="red"/>
+          <rect x="250" y="10" width="150" height="20" fill="green"/>
+          <rect x="1" y="10" width="400" height="20" fill="transparent"/>
+          <polygon points="310, 0, 310, 40" stroke="blue" stroke-dasharray="1, 5"/>
+        </svg>
+        <div class="content-div" style="grid-row: 2; display: flex; justify-content: space-between;">
+          <span style="text-align: left;">work→ 1h20m</span>
+          <span style="text-align: right;">43m15s ←rest</span>
+        </div>
+        <div class="content-div button-container" style="grid-row: 3;">
+          <button id="button-work" class="button" onclick="toggleButton('work')">
+            work
+          </button>
+          <button id="button-rest" class="button"onclick="toggleButton('rest')">
+            rest
+          </button>
+          <button id="button-off" class="button pressed"onclick="toggleButton('off')">
+            off the clock
+          </button>
         </div>
       </div>
     </div>
