@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG experiments</title>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: fit-content;
+      }
+
+      .content-div {
+        width: 100%;
+      }
+
+      .button-container {
+        display: flex;
+      }
+
+      .button-container button {
+        margin: 10px 10px 10px 0px;
+      }
+
+      .button {
+        box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+        background-color: #ddd;
+        border: 1px solid #aaa;
+      }
+
+      .button.pressed {
+        box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+        background-color: #ddd;
+        border: 1px solid #aaa;
+      }
+
+      * {
+        font-family: serif;
+      }
+
+      body {
+        font-family: serif;
+        background-color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="position: absolute; left: 600px; top: 200px;">
+      <div class="grid-container">
+        <svg width="401" height="40">
+          <rect x="0" y="10" width="250" height="20" fill="red" stroke="black" stroke-width="2"/>
+          <rect x="250" y="10" width="150" height="20" fill="green" stroke="black" stroke-width="2"/>
+          <rect x="1" y="10" width="400" height="20" fill="transparent" stroke="black" stroke-width="2"/>
+          <polygon points="310, 0, 310, 40" stroke="blue" stroke-width="2" stroke-dasharray="1, 5"/>
+        </svg>
+        <div class="content-div" style="grid-row: 2; display: flex; justify-content: space-between;">
+          <span style="text-align: left;">work→ 1h20m</span>
+          <span style="text-align: right;">43m15s ←rest</span>
+        </div>  
+        <div class="content-div button-container" style="grid-row: 3;">
+          <button class="button pressed">work</button>
+          <button class="button">rest</button>
+          <button class="button">off the clock</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
