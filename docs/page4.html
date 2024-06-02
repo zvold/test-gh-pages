@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SVG experiments</title>
     <style>
+      :root {
+        --bg_0:       #fbf3db;
+        --bg_1:       #ece3cc;
+        --bg_2:       #d5cdb6;
+        --dim_0:      #909995;
+        --fg_0:       #53676d;
+        --fg_1:       #3a4d53;
+        --red:        #d2212d;
+        --green:      #489100;
+        --yellow:     #ad8900;
+        --blue:       #0072d4;
+        --magenta:    #ca4898;
+        --cyan:       #009c8f;
+        --orange:     #c25d1e;
+        --violet:     #8762c6;
+        --br_red:     #cc1729;
+        --br_green:   #428b00;
+        --br_yellow:  #a78300;
+        --br_blue:    #006dce;
+        --br_magenta: #c44392;
+        --br_cyan:    #00978a;
+        --br_orange:  #bc5819;
+        --br_violet:  #825dc0;
+      }
+
       .grid-container {
         display: grid;
         grid-template-columns: 1fr;
@@ -24,24 +49,36 @@
       }
 
       .button {
-        box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
-        background-color: #ddd;
-        border: 1px solid #aaa;
+        box-shadow: inset -1px -1px var(--fg_1), 
+                    inset 1px 1px #ffffff,
+                    inset -2px -2px var(--fg_0),
+                    inset 2px 2px #dfdfdf;
+        background-color: var(--dim_0);
+        border: 1px solid var(--bg_0);
       }
 
       .button.pressed {
-        box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
-        background-color: #ddd;
-        border: 1px solid #aaa;
+        box-shadow: inset -1px -1px #ffffff,
+                    inset 1px 1px var(--fg_1),
+                    inset -2px -2px #dfdfdf,
+                    inset 2px 2px var(--fg_0);
+        background-color: var(--dim_0);
+        border: 1px solid var(--bg_0);
+        transform: translate(1px, 1px);
       }
 
       * {
         font-family: serif;
+        font-size: 1rem;
+        color: black;
       }
 
       body {
-        font-family: serif;
-        background-color: #aaa;
+        background-color: var(--bg_0);
+      }
+
+      html {
+        font-size: 100%;
       }
     </style>
     <script>
@@ -164,11 +201,11 @@
       // <text x="5" y="21" text-anchor="start" stroke-width="1" dominant-baseline="middle" font-family="serif" font-weight="10">work→ 1h23m</text>
       const template = `
         <div class="grid-container">
-          <svg width="401" height="40" stroke-width="2" stroke="black">
-            <rect x="0" y="10" width="%SPLIT_POSITION%" height="20" fill="red"/>
-            <rect x="%SPLIT_POSITION%" y="10" width="%REST_WIDTH%" height="20" fill="green"/>
+          <svg width="401" height="40" stroke-width="2" stroke="#3a4d53">
+            <rect x="0" y="10" width="%SPLIT_POSITION%" height="20" fill="#0072d4"/>
+            <rect x="%SPLIT_POSITION%" y="10" width="%REST_WIDTH%" height="20" fill="#489100"/>
             <rect x="1" y="10" width="400" height="20" fill="transparent"/>
-            <polygon points="%TARGET_X%, 1, %TARGET_X%, 41" stroke="blue" stroke-dasharray="1, 5"/>
+            <polygon points="%TARGET_X%, 1, %TARGET_X%, 41" stroke="#ca4898" stroke-dasharray="1, 5"/>
           </svg>
           <div class="content-div" style="grid-row: 2; display: flex; justify-content: space-between;">
             <span style="text-align: left;">work→ %WORK_TIME%</span>
