@@ -13,6 +13,5 @@ a.k.a. "page 5"
 
 ^ include
 
-{% include_relative ../01-hello-world/helloworld.md %}
 
 
