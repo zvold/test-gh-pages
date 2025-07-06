@@ -9,3 +9,6 @@ plugins:
   - jekyll-octicons
 
 markdown: GFM
+
+kramdown:
+  input: GFM
