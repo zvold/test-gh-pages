@@ -15,6 +15,8 @@ a.k.a. "page 5"
 
 ## math test
 
+testing inline maths $$\sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}$$ here $$\displaystyle \sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}$$ here
+
 testing inline maths \$$\sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}$$ here
 
 testing inline maths $$\sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}$$ here
