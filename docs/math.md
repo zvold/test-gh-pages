@@ -9,6 +9,10 @@ inline math: "$$\lvert 0\rangle$$." test
 
 testing inline maths $$\sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}$$ here $$\begin{psmallmatrix} 1 \\ 0 \end{psmallmatrix}$$ ...
 
+inline math: "$\lvert 0\rangle$." test
+
+testing inline maths $\sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}$ here
+
 $$P(A|B) = P(A)\cdot \frac{P(B|A)}{P(B)}$$
 
 **The Cauchy-Schwarz Inequality**\
