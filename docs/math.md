@@ -16,5 +16,7 @@ $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \
 \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
 ```
 
+inline math: "$$\lvert 0\rangle$$." test
+
 testing inline maths $$\sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}$$ here $$\begin{psmallmatrix} 1 \\ 0 \end{psmallmatrix}$$ ...
 
