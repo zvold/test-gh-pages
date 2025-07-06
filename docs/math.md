@@ -5,7 +5,7 @@ layout: math
 
 Testing if math works on github pages.
 
-is there a preprocessor “\(\lvert 0\rangle\).” for inline math?
+is there a preprocessor “\\(\lvert 0\rangle\\).” for inline math?
 
 inline math: "$$\lvert 0\rangle$$." test
 
