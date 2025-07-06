@@ -1,3 +1,8 @@
+---
+permalink: /math
+layout: custom
+---
+
 Testing if math works on github pages.
 
 $\displaystyle P(A|B) = P(A)\cdot \frac{P(B|A)}{P(B)}$
