@@ -7,5 +7,6 @@ theme: jekyll-theme-primer
 plugins:
   - jekyll-sitemap
   - jekyll-octicons
+  - jekyll-mathjax
 
 markdown: GFM
