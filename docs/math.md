@@ -5,6 +5,8 @@ layout: math
 
 Testing if math works on github pages.
 
+is there a preprocessor “\(\lvert 0\rangle\).” for inline math?
+
 inline math: "$$\lvert 0\rangle$$." test
 
 testing inline maths $$\sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}$$ here $$\begin{psmallmatrix} 1 \\ 0 \end{psmallmatrix}$$ ...
