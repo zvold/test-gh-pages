@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colored Rectangle</title>
+    <style>
+        body {
+            margin: 50 50;
+            font-family: sans-serif;
+        }
+        .rectangle {
+            border-color: black;
+            border: 1px solid red;
+            background-color: transparent;
+            height: 25px;  /* Adjust height as needed */
+            margin: 0 auto;  /* Center the rectangle horizontally */
+            width: 50%;  /* 50% width with 50px margin */
+            min-width: 500px;  /* Ensure full width on small screens */
+            max-width: 600px;
+        }
+        .rectangle svg {
+            width: 100%;  /* Set SVG width to 100% of its parent div */
+            height: 100%;  /* Set SVG height to 100% of its parent div */
+        }
+    </style>
+</head>
+<body>
+    <div class="rectangle">
+      <svg>
+        <rect x="0" y="0" width="75%" height="100%" fill="red" stroke="black" stroke-width="2"/>
+        <rect x="75%" y="0" width="25%" height="100%" fill="green" stroke="black" stroke-width="2"/>
+        <polygon points="60, 0, 60, 100" stroke="blue"/>
+      </svg>
+    </div>
+</body>
+</html>
