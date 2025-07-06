@@ -19,7 +19,7 @@ testing inline maths \$$\sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}$$ here
 
 $$P(A|B) = P(A)\cdot \frac{P(B|A)}{P(B)}$$
 
-inline $$P(A|B) = P(A)\cdot \frac{P(B|A)}{P(B)}$$ works?
+inline $$ P(A|B) = P(A)\cdot \frac{P(B|A)}{P(B)} $$ works?
 
 **The Cauchy-Schwarz Inequality**\
 $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
@@ -59,6 +59,6 @@ $$ 5 + 5 $$
 
 But next comes a paragraph with an inline math statement:
 
-\$$ 5 + 5 $$
+text \$$ 5 + 5 $$ text
 
 
