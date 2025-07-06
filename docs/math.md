@@ -1,6 +1,6 @@
 ---
 permalink: /math
-layout: custom
+layout: math
 ---
 
 Testing if math works on github pages.
