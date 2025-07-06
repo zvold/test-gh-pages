@@ -8,6 +8,15 @@ pre, code {
     font-family: monospace;
 }
 
+table {
+    border-collapse: collapse;
+    border: 1px solid var(--light-border-color);
+}
+
+th, td {
+    border: 1px solid var(--light-border-color);
+}
+
 .callout {
     padding: 0.75rem 1rem 0.75rem 1rem;
     margin-top: 1.25rem;
