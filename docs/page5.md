@@ -28,3 +28,11 @@ $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \
 text $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$ text
 
 text \$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$ text
+
+# markdown table test
+
+|  | Quickdraw faces right → | Quickdraw faces left ← |
+| --- | --- | --- |
+| Clipping with the right arm (R) | R→ | R← |
+| Clipping with the left arm (L) | L→ | L← |
+
